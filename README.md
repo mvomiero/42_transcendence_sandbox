@@ -22,3 +22,18 @@ export PATH="/home/mvomiero/.local/bin:$PATH"
 ```bash
 python3 -m django --version
 ```
+
+* to start a new project
+```bash
+django-admin startproject mysite
+```
+
+* to run the project:
+* first change in the website folder, then run
+```bash
+python3 manage.py runserver
+```
+* to start the polls app
+```bash
+python3 manage.py startapp polls
+```
