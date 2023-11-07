@@ -29,7 +29,7 @@ django-admin startproject mysite
 ```
 
 * to run the project:
-* first change in the website folder, then run
+* first change in the website folder, then run the servers
 ```bash
 python3 manage.py runserver
 ```
