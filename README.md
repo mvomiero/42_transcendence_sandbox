@@ -20,5 +20,5 @@ export PATH="/home/mvomiero/.local/bin:$PATH"
 ```
 * to check if django is installed
 ```bash
-python -m django --version
+python3 -m django --version
 ```
