@@ -12,3 +12,13 @@ source venv/bin/activate
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 ```
+
+
+### add the django location to PATH
+```bash
+export PATH="/home/mvomiero/.local/bin:$PATH"
+```
+* to check if django is installed
+```bash
+python -m django --version
+```
