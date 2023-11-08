@@ -7,13 +7,10 @@ app_name = "polls"
 
 # The path() function is three arguments, two required: route and view. It's an empty string because it's the root URL.
 # The third argument, is a name tag used for referencing the view in other parts of the Django app.
+app_name = "polls"
 urlpatterns = [
-    # ex: /polls/
-    path("", views.index, name="index"),
-    # ex: /polls/5/
-    path("<int:question_id>/", views.detail, name="detail"),
-    # ex: /polls/5/results/
-    path("<int:question_id>/results/", views.results, name="results"),
-    # ex: /polls/5/vote/
+    path("", views.IndexView.as_view(), name="index"),
+    path("<int:pk>/", views.DetailView.as_view(), name="detail"),
+    path("<int:pk>/results/", views.ResultsView.as_view(), name="results"),
     path("<int:question_id>/vote/", views.vote, name="vote"),
 ]

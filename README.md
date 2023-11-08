@@ -37,3 +37,7 @@ python3 manage.py runserver
 ```bash
 python3 manage.py startapp polls
 ```
+* to run tests
+```bash
+python3 manage.py test polls
+```
