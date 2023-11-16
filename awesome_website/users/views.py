@@ -32,7 +32,7 @@ def profile_update(request):
     if request.method == "POST":
         form = CustomUserForm(request.POST, instance=request.user)
         if form.is_valid():
-            print(form.cleaned_data)  # Print form data to the console for debugging
+            #print(form.cleaned_data)  # Print form data to the console for debugging
             form.save()
             return redirect('dashboard')
         else:
