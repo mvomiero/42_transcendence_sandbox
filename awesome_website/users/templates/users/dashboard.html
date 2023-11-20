@@ -25,6 +25,33 @@ Hello, {{ user.username|default:'Guest' }}!
             <p>No bio information available.</p>
         {% endif %}
     </div>
+
+	<div>
+        <h3>Chat:</h3>
+        <textarea id="chat-box" cols="40" rows="10"></textarea><br>
+        <input type="text" id="user-input"><button onclick="sendMessage()">Send</button>
+    </div>
+
+	<script>
+        const chatSocket = new WebSocket('ws://localhost:8000/ws/chat/');
+
+		chatSocket.onopen = function(event) {
+			console.log('WebSocket connected');
+		};
+
+        chatSocket.onmessage = function(event) {
+            const message = event.data;
+            document.querySelector('#chat-box').value += message + '\n';
+        };
+
+        function sendMessage() {
+            const userInput = document.querySelector('#user-input').value;
+            chatSocket.send(JSON.stringify({
+                'message': userInput
+            }));
+            document.querySelector('#user-input').value = '';
+        }
+    </script>
 {% endif %}
 
 <script>
