@@ -7,6 +7,10 @@ python3 -m venv --without-pip venv
 ```bash
 source venv/bin/activate
 ```
+* deactivate the venv
+```bash
+source venv/bin/deactivate
+```
 * get pip in the venv
 ```bash
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
